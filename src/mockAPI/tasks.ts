@@ -21,6 +21,6 @@ export const getTasks = (): Promise<Task[]> => {
 
 export const removeTaskById = (id: string): Promise<void> => {
   return new Promise((resolve) => {
-    setTimeout(resolve, 500, [...tasks.filter((task) => task.id !== id)]);
+    setTimeout(resolve, 100, [...tasks.filter((task) => task.id !== id)]);
   });
 };
