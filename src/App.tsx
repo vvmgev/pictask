@@ -5,7 +5,6 @@ import Loader from "@components/loader";
 import ThemeProvider from "@contexts/theme";
 import { lazy, Suspense } from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import "@mockAPI/users";
 
 const Home = lazy(() => import("@pages/Home"));
@@ -52,9 +51,7 @@ const App = () => {
     <div className="min-h-screen transition-colors duration-500 bg-slate-300 dark:bg-gray-800 dark:text-white ">
       <ThemeProvider>
         <Suspense fallback={<Loader />}>
-          <AnimatePresence mode="wait">
-            <RouterProvider router={router} />
-          </AnimatePresence>
+          <RouterProvider router={router} />
         </Suspense>
       </ThemeProvider>
     </div>

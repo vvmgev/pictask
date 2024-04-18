@@ -1,18 +1,22 @@
-import { motion } from "framer-motion";
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 type Props = PropsWithChildren;
 
 const Animate: FC<Props> = ({ children }) => {
+  const container = useRef<any>();
+  useGSAP(
+    () => {
+      gsap.to(".animate-content", { opacity: 1, duration: 1.5 });
+    },
+    { scope: container }
+  );
+
   return (
-    <motion.main
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
-    >
-      {children}
-    </motion.main>
+    <div ref={container}>
+      <div className="opacity-0 animate-content">{children}</div>
+    </div>
   );
 };
 
