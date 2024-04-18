@@ -3,6 +3,7 @@ import Button from "@components/button";
 import List from "@components/list/list";
 import Loader from "@components/loader";
 import { getUserById } from "@mockAPI/users";
+import { User } from "@models/user";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 

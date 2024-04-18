@@ -7,6 +7,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowDown, ArrowUp } from "@assets/icons";
 import { getUsers } from "@mockAPI/users";
+import { User } from "@models/user";
 
 const LOAD_LIMIT = 10;
 

@@ -1,6 +1,7 @@
-import { ChangeEvent, FC, FormEvent, useState } from "react";
 import Button from "@components/button";
 import TextInput from "@components/textInput";
+import { Task } from "@models/task";
+import { ChangeEvent, FC, FormEvent, useState } from "react";
 
 type Props = {
   onSave: (task: Omit<Task, "id">) => void;

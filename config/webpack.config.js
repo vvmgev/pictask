@@ -329,6 +329,7 @@ module.exports = function (webpackEnv) {
         "@contexts": path.resolve(__dirname, "../src/contexts"),
         "@hooks": path.resolve(__dirname, "../src/hooks"),
         "@assets": path.resolve(__dirname, "../src/assets"),
+        "@models": path.resolve(__dirname, "../src/models"),
         "@utils": path.resolve(__dirname, "../src/utils"),
         "@mockAPI": path.resolve(__dirname, "../src/mockAPI"),
       },

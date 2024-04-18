@@ -26,6 +26,7 @@
       "@contexts/*": ["src/contexts/*"],
       "@hooks/*": ["src/hooks/*"],
       "@assets/*": ["src/assets/*"],
+      "@models/*": ["src/models/*"],
       "@utils/*": ["src/utils/*"],
       "@mockAPI/*": ["src/mockAPI/*"],
   },

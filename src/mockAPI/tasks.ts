@@ -1,3 +1,4 @@
+import { Task } from "@models/task";
 import tasksData from "./tasks-data.json";
 
 const tasks: Task[] = tasksData;

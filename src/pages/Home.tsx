@@ -5,6 +5,7 @@ import Animate from "@components/animate";
 import NewTask from "@components/newTask";
 import { useEffect, useState } from "react";
 import { addNewTask, getTasks, removeTaskById } from "@mockAPI/tasks";
+import { Task } from "@models/task";
 
 const Home = () => {
   const [tasks, setTasks] = useState<Task[]>([]);

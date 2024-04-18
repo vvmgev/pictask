@@ -1,3 +1,4 @@
+import { User } from "@models/user";
 import userData from "./users-data.json";
 
 const users: User[] = userData;
