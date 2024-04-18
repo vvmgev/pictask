@@ -4,19 +4,9 @@ import Footer from "@components/footer";
 import Loader from "@components/loader";
 import ThemeProvider from "@contexts/theme";
 import { lazy, Suspense } from "react";
-import {
-  createBrowserRouter,
-  Outlet,
-  Route,
-  RouterProvider,
-  Routes,
-  useLocation,
-} from "react-router-dom";
-import "@mockAPI/users";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-// import Home from "@pages/Home";
-// import Users from "@pages/Users";
-// import Animate from "@components/animate";
+import "@mockAPI/users";
 
 const Home = lazy(() => import("@pages/Home"));
 const UserDetails = lazy(() => import("@pages/UserDetails"));

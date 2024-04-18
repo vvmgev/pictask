@@ -1,8 +1,8 @@
-import NewTask from "@components/newTask";
 import List from "@components/list/list";
 import Button from "@components/button";
 import Loader from "@components/loader";
 import Animate from "@components/animate";
+import NewTask from "@components/newTask";
 import { useEffect, useState } from "react";
 import { addNewTask, getTasks, removeTaskById } from "@mockAPI/tasks";
 
@@ -32,7 +32,7 @@ const Home = () => {
 
   return (
     <Animate>
-      <h1 className="text-3xl pl-2 my-5">Task List Page</h1>
+      <h1 className="pl-2 my-5 text-3xl">Task List Page</h1>
       <hr />
       <div className="flex">
         <div className="w-1/2 border-r border-black dark:border-white">
