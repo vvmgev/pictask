@@ -5,7 +5,7 @@ Used libraries/tools
 - React
 - React Router
 - Tailwind
-- Framer Motion
+- GSAP
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and ejected.
 
