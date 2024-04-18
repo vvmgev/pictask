@@ -3,11 +3,10 @@ import List from "@components/list/list";
 import TextInput from "@components/textInput";
 import Animate from "@components/animate";
 import Loader from "@components/loader";
-import arrowDown from "@assets/icons/arrowDown.svg";
-import arrowUp from "@assets/icons/arrowUp.svg";
-import { getUsers } from "@mockAPI/users";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ArrowDown, ArrowUp } from "@assets/icons";
+import { getUsers } from "@mockAPI/users";
 
 const LOAD_LIMIT = 10;
 
@@ -75,7 +74,7 @@ const Users = () => {
 
   return (
     <Animate>
-      <div className="w-full flex justify-between mb-5 items-center p-2">
+      <div className="flex items-center justify-between w-full p-2 mb-5">
         <h1 className="text-3xl">User List Page</h1>
         <div>
           <TextInput
@@ -88,12 +87,14 @@ const Users = () => {
         </div>
       </div>
       <hr />
-      <div className="flext items-center border-b-4 border-black dark:border-white p-2 flex gap-4">
+      <div className="flex items-center gap-4 p-2 border-b-4 border-black flext dark:border-white">
         <div className="flex-1">
           <Button className="flex" onClick={() => onChangeOrder(SortableColumn.FIRSTNAME)}>
             Name
-            {column === SortableColumn.FIRSTNAME && (
-              <img src={order === SortOrder.ASC ? arrowDown : arrowUp} className="w-6 h-6" />
+            {column === SortableColumn.FIRSTNAME && order === SortOrder.ASC ? (
+              <ArrowDown />
+            ) : (
+              <ArrowUp />
             )}
           </Button>
         </div>
@@ -101,9 +102,8 @@ const Users = () => {
         <div className="flex-1">
           <Button className="flex" onClick={() => onChangeOrder(SortableColumn.AGE)}>
             Age
-            {column === SortableColumn.AGE && (
-              <img src={order === SortOrder.ASC ? arrowDown : arrowUp} className="w-6 h-6" />
-            )}
+            {column === SortableColumn.AGE &&
+              (order === SortOrder.ASC ? <ArrowDown /> : <ArrowUp />)}
           </Button>
         </div>
         <div className="flex-1">Actions</div>
@@ -112,12 +112,12 @@ const Users = () => {
         {filteredUsers.map((user) => (
           <List.Item
             key={user.id}
-            className="border-b border-black dark:border-white p-2 flex gap-4"
+            className="flex gap-4 p-2 border-b border-black dark:border-white"
           >
             <div className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap">
               {user.firstName}
             </div>
-            <div className="flex-1 text-ellipsis overflow-hidden whitespace-nowrap">
+            <div className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap">
               {user.email}
             </div>
             <div className="flex-1">{user.age}</div>
@@ -130,7 +130,7 @@ const Users = () => {
       {loading && <Loader />}
       <br />
       {hasMore && !loading && <Button onClick={onLoadUsers}>Load more</Button>}
-      {!hasMore && <div className="pl-2 pb-5">No More Items to load</div>}
+      {!hasMore && <div className="pb-5 pl-2">No More Items to load</div>}
     </Animate>
   );
 };

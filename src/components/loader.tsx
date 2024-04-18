@@ -1,9 +1,8 @@
-import loader from "@assets/icons/loader.svg";
-
+import { Loader as LoaderSVG } from "@assets/icons";
 const Loader = () => {
   return (
-    <div className="flex h-full w-full items-center justify-center">
-      <img src={loader} className="w-10 h-10" />
+    <div className="flex items-center justify-center w-full h-full">
+      <LoaderSVG />
     </div>
   );
 };

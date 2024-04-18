@@ -1,7 +1,5 @@
 import Button from "@components/button";
-import moon from "@assets/icons/dark.svg";
-import light from "@assets/icons/light.svg";
-import computer from "@assets/icons/computer.svg";
+import { Computer, Light, Moon } from "@assets/icons";
 import { Theme, ThemeContext } from "@contexts/theme";
 import { useContext } from "react";
 
@@ -10,11 +8,9 @@ const ThemeSwitcher = () => {
 
   return (
     <div className="flex gap-2">
-      <Button onClick={toggle}>
-        <img src={theme === Theme.dark ? light : moon} className="w-6 h-6" />
-      </Button>
+      <Button onClick={toggle}>{theme === Theme.dark ? <Light /> : <Moon />}</Button>
       <Button onClick={reset}>
-        <img src={computer} className="w-6 h-6" />
+        <Computer />
       </Button>
     </div>
   );
