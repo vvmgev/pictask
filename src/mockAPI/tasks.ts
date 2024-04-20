@@ -1,7 +1,7 @@
 import { Task } from "@models/task";
 import tasksData from "./tasks-data.json";
 
-const tasks: Task[] = tasksData;
+let tasks: Task[] = tasksData;
 
 export const addNewTask = (task: Omit<Task, "id">): Promise<Task> => {
   return new Promise((resolve) => {
@@ -22,6 +22,7 @@ export const getTasks = (): Promise<Task[]> => {
 
 export const removeTaskById = (id: string): Promise<void> => {
   return new Promise((resolve) => {
-    setTimeout(resolve, 100, [...tasks.filter((task) => task.id !== id)]);
+    tasks = [...tasks.filter((task) => task.id !== id)];
+    setTimeout(resolve, 100, tasks);
   });
 };

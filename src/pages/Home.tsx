@@ -1,7 +1,7 @@
 import List from "@components/list/list";
 import Button from "@components/button";
 import Loader from "@components/loader";
-import NewTask from "@components/newTask";
+import NewTaskForm from "@components/newTaskForm";
 import { useCallback, useEffect, useState } from "react";
 import { addNewTask, getTasks, removeTaskById } from "@mockAPI/tasks";
 import { Task } from "@models/task";
@@ -55,7 +55,7 @@ const Home = () => {
           {loading && <Loader />}
         </div>
         <div className="w-1/2 p-2">
-          <NewTask onSave={addTask} />
+          <NewTaskForm onSave={addTask} />
         </div>
       </div>
     </div>

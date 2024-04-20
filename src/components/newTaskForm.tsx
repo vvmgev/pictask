@@ -7,7 +7,7 @@ type Props = {
   onSave: (task: Omit<Task, "id">) => void;
 };
 
-const NewTask: FC<Props> = ({ onSave }) => {
+const NewTaskForm: FC<Props> = ({ onSave }) => {
   const [title, setTitle] = useState<string>("");
   const [desc, setDesc] = useState<string>("");
 
@@ -43,4 +43,4 @@ const NewTask: FC<Props> = ({ onSave }) => {
   );
 };
 
-export default memo(NewTask);
+export default memo(NewTaskForm);
