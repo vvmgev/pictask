@@ -1,9 +1,8 @@
 import List from "@components/list/list";
 import Button from "@components/button";
 import Loader from "@components/loader";
-import Animate from "@components/animate";
 import NewTask from "@components/newTask";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { addNewTask, getTasks, removeTaskById } from "@mockAPI/tasks";
 import { Task } from "@models/task";
 
@@ -17,10 +16,10 @@ const Home = () => {
     setLoading(false);
   };
 
-  const addTask = async (task: Omit<Task, "id">): Promise<void> => {
+  const addTask = useCallback(async (task: Omit<Task, "id">): Promise<void> => {
     const newTask = await addNewTask(task);
-    setTasks([...tasks, newTask]);
-  };
+    setTasks((tasks) => [...tasks, newTask]);
+  }, []);
 
   const onRemoveById = async (id: string) => {
     await removeTaskById(id);
@@ -32,7 +31,7 @@ const Home = () => {
   }, []);
 
   return (
-    <Animate>
+    <div className="animate-fade">
       <h1 className="pl-2 my-5 text-3xl">Task List Page</h1>
       <hr />
       <div className="flex">
@@ -59,7 +58,7 @@ const Home = () => {
           <NewTask onSave={addTask} />
         </div>
       </div>
-    </Animate>
+    </div>
   );
 };
 

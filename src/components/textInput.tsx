@@ -1,12 +1,12 @@
-import { ComponentProps, FC } from "react";
+import { ComponentProps, FC, HTMLInputTypeAttribute, memo } from "react";
 
 type Props = {
   label?: string;
-  type: "text" | "textarea";
+  type: HTMLInputTypeAttribute | "textarea";
 };
 
 const TextInput: FC<Props & ComponentProps<"textarea" | "input">> = ({ type, label, ...props }) => {
-  const className = "w-full border border-black text-black rounded p-1";
+  const className = "w-full p-1 text-black border border-black rounded";
   return (
     <>
       {label && <span>{label}</span>}
@@ -22,4 +22,4 @@ const TextInput: FC<Props & ComponentProps<"textarea" | "input">> = ({ type, lab
   );
 };
 
-export default TextInput;
+export default memo(TextInput);

@@ -1,7 +1,7 @@
 import Button from "@components/button";
 import TextInput from "@components/textInput";
 import { Task } from "@models/task";
-import { ChangeEvent, FC, FormEvent, useState } from "react";
+import { ChangeEvent, FC, FormEvent, memo, useState } from "react";
 
 type Props = {
   onSave: (task: Omit<Task, "id">) => void;
@@ -43,4 +43,4 @@ const NewTask: FC<Props> = ({ onSave }) => {
   );
 };
 
-export default NewTask;
+export default memo(NewTask);

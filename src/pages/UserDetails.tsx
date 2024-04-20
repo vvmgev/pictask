@@ -1,10 +1,9 @@
-import Animate from "@components/animate";
 import Button from "@components/button";
 import List from "@components/list/list";
 import Loader from "@components/loader";
 import { getUserById } from "@mockAPI/users";
 import { User } from "@models/user";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 type Params = {
@@ -17,7 +16,7 @@ const UserDetails = () => {
   const [user, setUser] = useState<User>();
   const [loading, setLoading] = useState<boolean>(true);
 
-  const onBack = () => navigate("/users");
+  const onBack = useCallback(() => navigate("/users"), []);
 
   const fetchUserById = async (id: string) => {
     const user: User = await getUserById(id);
@@ -31,7 +30,7 @@ const UserDetails = () => {
   }, []);
 
   return (
-    <Animate>
+    <div className="animate-fade">
       <div className="p-2">
         <div className="flex gap-5">
           <Button onClick={onBack}>Back</Button>
@@ -52,7 +51,7 @@ const UserDetails = () => {
         )}
         {loading && <Loader />}
       </div>
-    </Animate>
+    </div>
   );
 };
 

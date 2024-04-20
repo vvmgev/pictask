@@ -3,7 +3,7 @@ import Content from "@components/content";
 import Footer from "@components/footer";
 import Loader from "@components/loader";
 import ThemeProvider from "@contexts/theme";
-import { lazy, Suspense } from "react";
+import { lazy, Profiler, Suspense } from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "@mockAPI/users";
 
