@@ -5,9 +5,10 @@ Used libraries/tools
 - React
 - React Router
 - Tailwind
-- GSAP
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and ejected.
+
+The project uses mock API data for imitating backend and it located in `src/mockAPI` folder.
 
 ## Lunch App
 
